@@ -1,0 +1,40 @@
+{% extends "shop/base.html" %} 
+{% load static %} 
+{% block title %} 
+{% if search_term %}Resultados de búsqueda para "{{ search_term }}"
+{% else %}Resultados de búsqueda{% endif %} {% endblock %} {% block content %}
+<div class="searched-title">
+  <h1>ESTOS SON LOS PRODUCTOS Para "{{ search_term }}"</h1>
+</div>
+<div class="searched-products">
+  <div class="col-md-9">
+        <div id="main" class="product-list">
+          <div class="all-products">
+            <div class="row">
+              {% for product in products %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="card card-product card-plain">
+                    <div class="card-image">
+                      <a href="{{ product.get_absolute_url }}">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="{{ product.name }}">
+                      </a>
+                    </div>
+                    <div class="card text-center">
+                      <a href="{{ product.get_absolute_url }}">
+                        <h5 class="card-title ">{{ product.name }}</h5>
+                      </a>
+                      <div class="card-footer-center">
+                        <div class="price-container">
+                          <span class="price">${{ product.price }}</span>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>        
+        </div>       
+      </div>
+</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+  {{ product.name }}
+{% endblock %}
+{% block content %}
+  <div class="container product-detail">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-fluid" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="{{ product.name }}">
+      </div>
+      <div class="col-md-6">
+        <h1>{{ product.name }}</h1>
+        <h2>
+          <ul>
+            {% for category in product.category.all %}
+                <li> <a href="{{ product.category.get_absolute_url }}">
+                        {{ category.name }}
+                      </a>
+                </li>
+              {% endfor %}
+          </ul>
+        </h2>
+        <p class="price">${{ product.price }}</p>
+        <div class=button-container>
+          <form action="{% url "cart:cart_add" product.id %}" method="post" class="add-to-cart-form">
+            {% csrf_token %}        
+            <input type="hidden" name="next" value="{% url "orders:order_create" %}">
+            <button type="submit" class="btn button-buy btn-buy"> Comprar ahora</button>
+            <div class="form-group custom-form-group">
+              <label class="quantity-label">{{ cart_product_form.quantity.label }}</label>
+              {{ cart_product_form.quantity }}
+            </div>
+          </form>
+          <form action="{% url "cart:cart_add" product.id %}" method="post" class="add-to-cart-form">          
+            {% csrf_token %}
+            <button type="submit" class="btn btn-round">Agregar al carrito</button>        
+          </form>
+        </div>
+        <p class="description">{{ product.description|linebreaks }}</p>
+      </div>
+      <hr>
+      <div class="shipping-payment-info">        
+        <i class="fa-solid fa-truck-fast"></i>
+        <p>Envio gratis</p>
+        <i class="fa-solid fa-credit-card"></i>
+        <p>Tarjetas</p>
+        <i class="fa-solid fa-comments-dollar"></i>
+        <p>Transferencia</p>
+        <i class="mp-icon"></i>
+        <p>MP</p> 
+      </div>
+      <hr>
+      <div class="related-product">
+  <h4>Productos relacionados</h4>
+  <section class="container pt-3">
+    <section class="carousel slide" data-bs-ride="carousel" id="postsCarousel">
+      <div class="carousel-inner">
+        {% if related_products %}
+          {% for related_product in related_products %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              
+              <div class="card h-100">
+                <div class="card-image">
+                  <a href="{{ related_product.get_absolute_url }}">
+                    <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="img-fluid">
+                  </a>
+                </div>
+                <div class="card-body text-center">
+                  <a href="{{ related_product.get_absolute_url }}">
+                    <h5>{{ related_product.name }}</h5>
+                  </a>
+                </div>
+                <div class="card-footer text-center">
+                  <span>${{ related_product.price }}</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No se encontraron productos relacionados.</p>
+        {% endif %}
+      </div>
+      
+      <a class="carousel-control-prev" href="#postsCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#postsCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </section>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "shop/base.html" %} {% load static %} {% block title %} Iniciar
+sesión o Registrarse {% endblock %} {% block content %}
+<div class="container">
+  {% if messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.error }}">{{ message }}</div>
+    {% endfor %}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endif %}
+  <div class="login--wrapper">
+    {% if page == 'login' %}
+    <form method="post" class="form">
+      {% csrf_token %}
+      <div class="mb-3">
+        <h1>Iniciar sesión</h1>
+        <h5>Registrate para hacer tus compras</h5>
+        <div class="mb-3">
+          <label for="username" class="form-label">Usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            id="username"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <p>
+          Si no tenes una cuenta,
+          <a href="{% url 'account:register' %}">Registrate</a>
+        </p>
+      </div>
+    </form>
+    {% else %}
+    <form method="post" class="form">
+      {% csrf_token %}
+      <h1>Registrate</h1>
+      {% for field in form %}
+      <div class="mb-3">
+        <label for="{{ field.id_for_label }}" class="form-label"
+          >{{ field.label }}</label
+        >
+        {{ field }}
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">Crear usuario</button>
+      <p>
+        Si ya tenes una cuenta, <a href="{% url 'account:login' %}">login</a>
+      </p>
+    </form>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

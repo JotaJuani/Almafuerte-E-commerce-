@@ -1,0 +1,43 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+  {% if category %}{{ category.name }}{% else %}Almafuerte{% endif %}
+{% endblock %}
+{% block content %}
+       
+  <div class="col-md-9">
+        <div id="main" class="product-list-sold">
+          <h1>{% if category %}{{ category.name }}{% else %}Lo más vendido{% endif %}</h1>
+          <div class="all-products-sold">
+            <div class="row">
+              {% for product in products %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="card card-product">
+                    <div class="card-image">
+                      <a href="{{ product.get_absolute_url }}">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="{{ product.name }}">
+                      </a>
+                    </div>
+                    <div class="card text-center">
+                      <a href="{{ product.get_absolute_url }}">
+                        <h5 class="card-title ">{{ product.name }}</h5>
+                      </a>
+                      <div class="card-footer-center">
+                        <div class="price-container">
+                          <span class="price">${{ product.price }}</span>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% if category %}{% url 'shop:product_list_by_category' category.slug %}?show_all=True{% else %}{% url 'shop:product_list' %}?show_all=True{% endif %}" class="btn btn-round">Cargar mas..</a>
+            </div>
+          </div>        
+        </div>       
+      </div>
+  </div>
+{% endblock %}
+

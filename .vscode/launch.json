@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Pythondebug",
+            "python":"C:/Users/juani/OneDrive/Desktop/PYTHON/django/SHOP/venv/scripts/python",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "C:/Users/juani/OneDrive/Desktop/PYTHON/django/SHOP/myshop/manage.py",
+            "console": "integratedTerminal",
+            "args":["runserver"]
+        }
+    ]
+}

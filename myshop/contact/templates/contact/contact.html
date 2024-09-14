@@ -1,0 +1,17 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title%}Contacto{%endblock %}
+ {% block content %}
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="contact-div">
+      <h1>Contacto</h1>
+      <form method="post" action="">
+        {% csrf_token %} {{ form.as_p }}
+        <button class="contact-button" type="submit">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock %}
