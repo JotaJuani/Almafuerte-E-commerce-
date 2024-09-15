@@ -93,7 +93,9 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                
               >
+              
                 Fitness
               </a>
               <ul
@@ -225,8 +227,8 @@
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
-              Ortopedia <i class="bi bi-caret-down-fill"></i>
+            ><i class="fa-solid fa-kit-medical icon-padding"></i>
+              Rehabilitación <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li>
@@ -262,6 +264,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
+              <i class="fa-solid fa-dumbbell icon-padding"></i>
               Fitness <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -286,18 +289,19 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact:info_plantillas' %}">Plantillas ortopedicas</a>
+            <a class="nav-link" href="{% url 'contact:info_plantillas' %}"><i class="fa-solid fa-shoe-prints icon-padding"></i>Plantillas ortopedicas</a>
           </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact:contact' %}">Contacto</a>
+            <a class="nav-link" href="{% url 'contact:contact' %}"><i class="fa-solid fa-envelope icon-padding"></i>Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'shop:about' %}">Sobre nosotros</a>
+            <a class="nav-link" href="{% url 'shop:about' %}"><i class="fa-solid fa-users icon-padding"></i>Sobre nosotros</a>
           </li>
         </ul>
-
+      
         <div class="user-links">
+        <hr>
           {% if request.user.is_authenticated %}
             <ul class="authenticated-links">
               <li class="">

@@ -393,9 +393,7 @@ ul.errorlist {
     padding: 0px 0px 0 0;
     float: left;
     margin-top: 1px;
-    border: 0;
-     
-    
+    border: 0;    
 } 
 
 #sidebar ul {
@@ -406,7 +404,7 @@ ul.errorlist {
 #sidebar ul li {
     margin: 0;
     list-style: none;
-    padding: 10px 14px;
+    padding: 10px 1px;
 }
 
 #sidebar ul li a {
@@ -914,12 +912,13 @@ color: #b38693;
 }
 .offcanvas {
     background: linear-gradient(to top,white ,#b38693);
-    border-radius: 9px;
+    border-radius: 15px;
     
 }
 .offcanvas-header{
     background-color: white;
   }
+
   .user-links {
     color: #b38693;
     position: absolute;
@@ -937,7 +936,7 @@ color: #b38693;
 .user-links i.fa-user {
     font-size: 14px;
     margin-right: 5px;
-    margin-left: 10px;
+    
 }
 .authenticated-links, .unauthenticated-links {
     display: flex;
@@ -1176,15 +1175,16 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
 @media (min-width: 350px) and (max-width: 767px) {
     .menu-toggle{
         background-color: transparent;
-        border: none;
+        border: none !important;
         z-index: 100;
         cursor:pointer;
+    }
+    .icon-padding{
+        padding-right: 5px ;
     }
     .shipping-payment-info i{
         font-size: 40px;
         margin:7px;
-        
-
             }
     .shipping-payment-info{
         display:ruby;
@@ -1485,11 +1485,16 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         position: relative;
     }
     
-
+    .navbar-toggler{
+        border:none !important;
+    }
     
 }
 
 @media (min-width: 768px) {
+    .navbar-toggler{
+        border:none !important;
+    }
     .slide-title {
         font-size: 3.5rem; 
         font-family: 'Playfair Display', serif;
