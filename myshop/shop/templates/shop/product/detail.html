@@ -30,12 +30,17 @@
             <div class="form-group custom-form-group">
               <label class="quantity-label">{{ cart_product_form.quantity.label }}</label>
               {{ cart_product_form.quantity }}
+              
             </div>
           </form>
           <form action="{% url "cart:cart_add" product.id %}" method="post" class="add-to-cart-form">          
             {% csrf_token %}
-            <button type="submit" class="btn btn-round">Agregar al carrito</button>        
+            <button type="submit" class="btn btn-round">Agregar al carrito</button>
+            <div class="form-group custom-form-group">  
+            <label class="size-label">{{ size_product_form.size.label }}</label>
+              {{ size_product_form.size}}      
           </form>
+        </div>
         </div>
         <p class="description">{{ product.description|linebreaks }}</p>
       </div>
@@ -52,34 +57,34 @@
       </div>
       <hr>
       <div class="related-product">
-  <h4>Productos relacionados</h4>
-  <section class="container pt-3">
-    <section class="carousel slide" data-bs-ride="carousel" id="postsCarousel">
-      <div class="carousel-inner">
-        {% if related_products %}
-          {% for related_product in related_products %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-              
-              <div class="card h-100">
-                <div class="card-image">
-                  <a href="{{ related_product.get_absolute_url }}">
-                    <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="img-fluid">
-                  </a>
-                </div>
-                <div class="card-body text-center">
-                  <a href="{{ related_product.get_absolute_url }}">
-                    <h5>{{ related_product.name }}</h5>
-                  </a>
-                </div>
-                <div class="card-footer text-center">
-                  <span>${{ related_product.price }}</span>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        {% else %}
-          <p>No se encontraron productos relacionados.</p>
-        {% endif %}
+        <h4>Productos relacionados</h4>
+        <section class="container pt-3">
+          <section class="carousel slide" data-bs-ride="carousel" id="postsCarousel">
+            <div class="carousel-inner">
+              {% if related_products %}
+                {% for related_product in related_products %}
+                  <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    
+                    <div class="card h-100">
+                      <div class="card-image">
+                        <a href="{{ related_product.get_absolute_url }}">
+                          <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="img-fluid">
+                        </a>
+                      </div>
+                      <div class="card-body text-center">
+                        <a href="{{ related_product.get_absolute_url }}">
+                          <h5>{{ related_product.name }}</h5>
+                        </a>
+                      </div>
+                      <div class="card-footer text-center">
+                        <span>${{ related_product.price }}</span>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <p>No se encontraron productos relacionados.</p>
+              {% endif %}
       </div>
       
       <a class="carousel-control-prev" href="#postsCarousel" role="button" data-bs-slide="prev">
@@ -92,5 +97,8 @@
       </a>
     </section>
   </section>
+  <a  class="whats-app" href="#" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 </div>
 {% endblock %}

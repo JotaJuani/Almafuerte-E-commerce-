@@ -1053,6 +1053,11 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     gap: 10px;
     margin-bottom: 10px; 
 }
+.size-label {    
+    font-weight: bold;     
+    color: #b38693; 
+    vertical-align: middle;
+}
 .quantity-label {    
     font-weight: bold;     
     color: #b38693; 
@@ -1171,7 +1176,23 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
   .custom-carousel-control:hover .carousel-control-next-icon {
     background: black; 
   }
-
+  .whats-app {
+    position: fixed;
+    width: 60px;
+    height: 66px;
+    bottom:40px;
+    left:0;
+    right:unset;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    }
+    
+    
 @media (min-width: 350px) and (max-width: 767px) {
     .menu-toggle{
         background-color: transparent;
@@ -1179,6 +1200,26 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         z-index: 100;
         cursor:pointer;
     }
+    .whats-app {
+        position: fixed;
+        width: 40px;
+        height: 46px;
+        bottom: 40px;
+        left:0;
+        right:unset;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        margin-left:2px;
+        }
+        
+        .my-float {
+            margin-top: 16px;
+        }
     .icon-padding{
         padding-right: 5px ;
     }
