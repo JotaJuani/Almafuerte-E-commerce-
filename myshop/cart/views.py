@@ -14,7 +14,9 @@ def cart_add(request, product_id):
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
+        size = cd.get('size')
         cart.add(product=product,
+                 size=size,
                  quantity=cd['quantity'],
                  override_quantity=cd['override'])
     next_url = request.POST.get('next', 'cart:cart_detail')

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from shop.models import Category,   Product
-from cart.forms import CartAddProductForm, CartAddProductSizeForm
+from cart.forms import CartAddProductForm
 from .serializers import ProductSerializer
 from django.http import JsonResponse
 
@@ -82,7 +82,7 @@ def product_detail(request, id, slug):
                                 slug=slug,
                                 available=True)
     cart_product_form = CartAddProductForm()
-    size_product_form = CartAddProductSizeForm()
+
     related_products = Product.objects.filter(
         category__in=product.category.all()
     ).exclude(id=product.id)
@@ -91,7 +91,6 @@ def product_detail(request, id, slug):
                   'shop/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form,
-                   'size_product_form': size_product_form,
                    'related_products': related_products})
 
 

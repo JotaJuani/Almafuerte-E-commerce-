@@ -3,7 +3,6 @@ from shop.models import Product
 from django.conf import settings
 
 
-
 class Order(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -37,9 +36,6 @@ class Order(models.Model):
         return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
 
 
-
-
-
 class OrderItem(models.Model):
     order = models.ForeignKey(Order,
                               related_name='items',
@@ -52,11 +48,10 @@ class OrderItem(models.Model):
                                 )
     quantity = models.PositiveIntegerField(default=1)
 
+    size = models.CharField(max_length=6, default=1)
+
     def __str__(self):
         return str(self.id)
 
     def get_cost(self):
         return self.price * self.quantity
-
-
-

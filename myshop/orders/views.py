@@ -29,14 +29,16 @@ def order_create(request):
                 OrderItem.objects.create(order=order,
                                          product=item['product'],
                                          price=str(item['price']),
-                                         quantity=item['quantity'])
+                                         quantity=item['quantity'],
+                                         size=str['size'])
 
             request.session['order_id'] = int(order.id)
             cart_serialized = {
                 key: {
                     'quantity': value['quantity'],
-                    'price': str(value['price']), 
+                    'price': str(value['price']),
                     'product': str(value['product']),
+                    'size': str(value['size']),
                     'total_price': str(value['total_price'])}
                 for key, value in cart.cart.items()
             }

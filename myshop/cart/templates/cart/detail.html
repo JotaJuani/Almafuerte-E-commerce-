@@ -18,6 +18,7 @@
                   <th>Imagen</th>
                   <th>Producto</th>
                   <th>Cantidad</th>
+                  <th>Talle</th>
                   <th>Remover</th>
                   <th>Precio por unidad</th>
                   <th>Precio</th>
@@ -40,6 +41,9 @@
                         <input class="btn-update" type="submit" value="Actualizar">
                         {% csrf_token %}
                       </form>
+                      </td>
+                      <td>
+                        {{ item.size }}
                       </td>
                       <td>
                         <form action="{% url "cart:cart_remove" product.id %}" method="post">
