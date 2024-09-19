@@ -15,6 +15,7 @@ class CartAddProductForm(forms.Form):
                                       })
                                       )
     size = forms.TypedChoiceField(choices=PRODUCT_SIZE_CHOICES,
+                                  required=False,
                                   coerce=int,
                                   label=_('Talle'),
                                   widget=forms.Select(attrs={
