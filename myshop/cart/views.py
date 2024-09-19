@@ -17,19 +17,23 @@ def cart_add(request, product_id):
     if form.is_valid():
         cd = form.cleaned_data
         print(cd)
-        size = cd.get('size')
         cart.add(product=product,
-                 size=size,
+                 size=cd.get('size'),
                  quantity=cd['quantity'],
                  override_quantity=cd['override'])
 
-        print(product_id, size)
+        print(product_id,)
         print(cart.cart)
         print("Cart contents after adding:", cart.cart)
     else:
         print("Form errors:", form.errors)
-    next_url = request.POST.get('next', 'cart:cart_detail')
-    return redirect(next_url)
+
+    action = request.POST.get('action')
+
+    if action == 'buy_now':
+        return redirect('orders:order_create')
+    else:
+        return redirect('cart:cart_detail')
 
 
 @require_POST
@@ -50,8 +54,8 @@ def cart_detail(request):
     for item in cart:
         item['update_quantity_form'] = CartAddProductForm(initial={
             'quantity': item['quantity'],
+            'override': True,
             'size': item['size'],
-            'override': True
         })
 
     return render(request, 'cart/detail.html', {'cart': cart})

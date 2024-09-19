@@ -22,26 +22,30 @@
           </ul>
         </h2>
         <p class="price">${{ product.price }}</p>
+
         <div class=button-container>
+
           <form action="{% url "cart:cart_add" product.id %}" method="post" class="add-to-cart-form">
-            {% csrf_token %}        
-            <input type="hidden" name="next" value="{% url "orders:order_create" %}">
-            <button type="submit" class="btn button-buy btn-buy"> Comprar ahora</button>
+            {% csrf_token %}
+
             <div class="form-group custom-form-group">
               <label class="quantity-label">{{ cart_product_form.quantity.label }}</label>
-              {{ cart_product_form.quantity }}
-              
+              {{ cart_product_form.quantity }}              
             </div>
-          </form>
-          <form action="{% url "cart:cart_add" product.id %}" method="post" class="add-to-cart-form">          
-            {% csrf_token %}
-            <button type="submit" class="btn btn-round">Agregar al carrito</button>
+                      
             <div class="form-group custom-form-group">  
-            <label class="size-label">{{ cart_product_form.size.label }}</label>
-              {{ cart_product_form.size}}
-                  
+              <label class="size-label">{{ cart_product_form.size.label }}</label>
+                {{ cart_product_form.size}}
+            </div>
+              <input type="hidden" name="action" value="">
+
+            <button type="submit" class="btn button-buy btn-buy" onclick="this.form.action.value='buy_now'"> Comprar ahora</button>
+            <button type="submit" class="btn btn-round" onclick="this.form.action.value='add_cart' ">Agregar al carrito</button>
           </form>
+
         </div>
+
+
         </div>
         <p class="description">{{ product.description|linebreaks }}</p>
       </div>

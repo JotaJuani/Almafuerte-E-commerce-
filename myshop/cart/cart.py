@@ -1,13 +1,15 @@
 from django.conf import settings
 from shop.models import Product
 from decimal import Decimal
- 
+
 
 class Cart:
     def __init__(self, request):
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
-        self.cart = self.session.get(settings.CART_SESSION_ID,{})
+        if not cart:
+            cart = self.session[settings.CART_SESSION_ID] = {} 
+        self.cart = cart
 
     def add(self, product, size=None, quantity=1, override_quantity=False):
         product_id = str(product.id)
@@ -19,10 +21,10 @@ class Cart:
             self.cart[product_id]['quantity'] = quantity
         else:
             self.cart[product_id]['quantity'] += int(quantity)
-        
+
         self.save()
-        print(self.cart[product.id])
-        
+        print(self.cart[product_id])
+
     def save(self):
         for item in self.cart.values():
             item['price'] = str(item['price'])
@@ -45,9 +47,7 @@ class Cart:
         for product in products:
             cart[str(product.id)]['product'] = product
         for item in cart.values():
-
             item['price'] = Decimal(item['price'])
-
             item['quantity'] = int(item['quantity'])
             item['total_price'] = item['price'] * \
                 item['quantity']

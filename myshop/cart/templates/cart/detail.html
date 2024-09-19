@@ -21,7 +21,7 @@
                   <th>Talle</th>
                   <th>Remover</th>
                   <th>Precio por unidad</th>
-                  <th>Precio</th>
+                  <th>Precio total</th>
                 </tr>
               </thead>
               <tbody>
@@ -37,9 +37,9 @@
                       <td>{{ product.name }}</td>
                       <td>
                         <form action="{% url "cart:cart_add" product.id %}" method="post">
-                          {{ item.update_quantity_form.quantity }}
-                          {{ item.update_quantity_form.size }}
+                          {{ item.update_quantity_form.quantity }}                                                    
                           {{ item.update_quantity_form.override }}
+                          
                           <input class="btn-update" type="submit" value="Actualizar">
                           {% csrf_token %}
                       
