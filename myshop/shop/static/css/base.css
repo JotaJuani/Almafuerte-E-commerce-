@@ -1223,17 +1223,31 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         background-position: center; 
         vertical-align: middle; 
       }
+    .container .pt-3{
 
-      .related-product .carousel-inner{
+        display: flex;
+        width:100%;
+        align-items:center;
+        max-width: 100%;
+        padding-top:0.5em;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .related-product{
+        width:35%;
+        max-width: 35%;
+        justify-self: center;
+    }
+    .related-product .carousel-inner{
         display:flex;
-        flex-wrap: wrap;
+        
     }
     .related-product .carousel-item{
         padding:15px;        
         }
 
     .related-product .card{
-        width:50%;
+        width:100%;
         max-width: 100%;
         justify-self: center;
     }
@@ -1241,7 +1255,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         justify-self: center;
     }
     .related-product-img{
-        width: 50%;
+        width: 100%;
         height:auto;
         object-fit: cover;
 
