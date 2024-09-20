@@ -1024,22 +1024,23 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     width: auto;       
     height: auto;      
   }
-  .btn-full-width{
+.btn-full-width{
     width: 100%;
     color: #b14e6a;
 }
 .btn.btn-block{
-    width: 100%;
+    
     background-color: #b38693;
 }
 .button-container{
     gap:10px;
     display:flex;
+    flex-direction: column;
 }
 .btn.btn-round{
     color: #b38693;
     border-color:#b38693;    
-    width:100%;
+    
 }
 .btn.btn-buy{
     width:135px;
@@ -1047,11 +1048,20 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     background-color: #b38693;
     border-radius: 30px;  
 }
+.row-forms{
+    display:flex;
+    gap:10px;
+    justify-content:flex-start;
+}
+
 .custom-form-group {
-    display: flex; 
+    display: inline-flex; 
     align-items: center; 
     gap: 10px;
     margin-bottom: 10px; 
+}
+.carousel-inner p{
+    margin-left:45px;
 }
 .size-label {    
     font-weight: bold;     
@@ -1181,17 +1191,66 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     width: 60px;
     height: 66px;
     bottom:40px;
-    left:0;
+    left:2px;
     right:unset;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
-    font-size: 30px;
+    font-size: 44px;
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
     }
-    
+    .shipping-payment-info i{
+        font-size: 40px;
+        margin:7px;
+        
+            }
+            
+    .shipping-payment-info{
+        display:ruby;
+        font-size: 17px;
+        
+    }
+    .mp-icon {
+        
+        display: inline-block; 
+        width: 50px; 
+        height: 50px; 
+        background-image: url('/media/mp-icon.ico'); 
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        vertical-align: middle; 
+      }
+
+      .related-product .carousel-inner{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .related-product .carousel-item{
+        padding:15px;        
+        }
+
+    .related-product .card{
+        width:50%;
+        max-width: 100%;
+        justify-self: center;
+    }
+    .related-product .card .h-100{
+        justify-self: center;
+    }
+    .related-product-img{
+        width: 50%;
+        height:auto;
+        object-fit: cover;
+
+    }
+    .related-product h4{
+        text-align: center;
+        margin-bottom: 20px;
+
+    }
     
 @media (min-width: 350px) and (max-width: 767px) {
     .menu-toggle{
@@ -1199,6 +1258,30 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         border: none !important;
         z-index: 100;
         cursor:pointer;
+    }
+    .button-container{
+        gap:10px;
+        display:flex;
+    }
+    .btn.btn-round{
+        color: #b38693;
+        border-color:#b38693;    
+        
+    }
+    .btn.btn-buy{
+        width:135px;
+        color:white;
+        background-color: #b38693;
+        border-radius: 30px;  
+    }
+    .custom-form-group {
+        display: inline-flex; 
+        align-items: center; 
+        gap: 10px;
+        margin-bottom: 10px; 
+    }
+    .carousel-inner p{
+        margin-left:45px;
     }
     .whats-app {
         position: fixed;
@@ -1535,6 +1618,30 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
 @media (min-width: 768px) {
     .navbar-toggler{
         border:none !important;
+    }
+    .button-container{
+        gap:10px;
+        display:flex;
+    }
+    .btn.btn-round{
+        color: #b38693;
+        border-color:#b38693;    
+        
+    }
+    .btn.btn-buy{
+        width:135px;
+        color:white;
+        background-color: #b38693;
+        border-radius: 30px;  
+    }
+    .custom-form-group {
+        display: inline-flex; 
+        align-items: center; 
+        gap: 10px;
+        margin-bottom: 10px; 
+    }
+    .carousel-inner p{
+        margin-left:45px;
     }
     .slide-title {
         font-size: 3.5rem; 
