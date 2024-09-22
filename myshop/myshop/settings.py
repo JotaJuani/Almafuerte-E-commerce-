@@ -95,8 +95,12 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myshop',
+        'USER': 'myshop_user',
+        'PASSWORD': 'my_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -150,7 +154,7 @@ CART_SESSION_ID = 'cart'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'seriedrago@gmail.com'
-EMAIL_HOST_PASSWORD = 'irps kniu hvsf zshg'
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
