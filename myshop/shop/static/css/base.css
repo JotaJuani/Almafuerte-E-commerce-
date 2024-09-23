@@ -1024,12 +1024,9 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     width: auto;       
     height: auto;      
   }
-.btn-full-width{
-    width: 100%;
-    color: #b14e6a;
-}
+
 .btn.btn-block{
-    
+    width: 100%;
     background-color: #b38693;
 }
 .button-container{
@@ -1094,7 +1091,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     margin-top: 50px;
 }
 .col-sm-4{
-    width: 90%;
+    width: 100%;
 }
 .nav-item{
     margin-left: 10%;
@@ -1387,7 +1384,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         color: #9e6676;
       }
     .col-sm-4{
-        width: 90%;
+        width: 100% !important;
     }
     .collapse-panel {
         max-height: 150px; 
@@ -1701,7 +1698,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         color: #9e6676;
     }
     .col-sm-4{
-        width: 90%;
+        width: 100% !important;
     }
     .menu-toggle{
         background-color: transparent;
