@@ -77,7 +77,11 @@
                     <div class="card h-100">
                       <div class="card-image">
                         <a href="{{ related_product.get_absolute_url }}">
-                          <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="img-fluid">
+                          {% if related_product.image %}
+                            <img src="{{ related_product.image.url }}" alt="{{ related_product.name }}" class="img-fluid">
+                          {% else %}
+                          <img src="{% static 'products/tensiometro_aneroide.jpg' %}" alt="Imagen hardocodeada" class="img-fluid">
+                          {% endif %}
                         </a>
                       </div>
                       <div class="card-body text-center">

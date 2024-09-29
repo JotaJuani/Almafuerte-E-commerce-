@@ -91,7 +91,7 @@ def product_detail(request, id, slug):
                   'shop/product/detail.html',
                   {'product': product,
                    'cart_product_form': cart_product_form,
-                   'related_products': related_products})
+                   'related_products': related_products,})
 
 
 def search_products(request):

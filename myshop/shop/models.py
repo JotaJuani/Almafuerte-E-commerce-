@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Category(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
@@ -8,6 +9,7 @@ class Category(models.Model):
                                   blank=True)
     image_two = models.ImageField(upload_to='products/%Y/%m/%d',
                                   blank=True)
+
     class Meta:
         ordering = ['name']
         indexes = [
@@ -21,6 +23,7 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category',
                        args=[self.slug])
+
 
 class Product(models.Model):
     category = models.ManyToManyField(
@@ -50,5 +53,3 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
-
-

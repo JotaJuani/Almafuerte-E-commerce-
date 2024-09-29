@@ -733,7 +733,7 @@ form div.field {
     margin-top: 40px;
     margin-bottom: 15px;
     min-height: 70vh;
-    min-width: 150vh;
+    
 }
 
 .subscribe-line.subscribe-line-image:after {
@@ -742,7 +742,6 @@ form div.field {
     width: 100%;
     height: 100%;
     display: block;
-    
     top: 0;
     content: "";
     background-color: rgba(0, 0, 0, .66);
@@ -1161,8 +1160,8 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
   }
   .custom-carousel-control {
     color: rgba(0, 0, 0, 0.5); 
-    width: 40px; 
-    height: 40px; 
+    width: 45px; 
+    height: 45px; 
     border-radius: 50%; 
     display: flex;
     align-items: center;
@@ -1198,6 +1197,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
     }
+
     .shipping-payment-info i{
         font-size: 40px;
         margin:7px;
@@ -1205,15 +1205,18 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
             }
             
     .shipping-payment-info{
-        display:ruby;
+        display: flex;
+        justify-content: space-evenly;
         font-size: 17px;
-        
     }
-    .mp-icon {
-        
+    .shipping-payment-info p {
+        margin-top: 2%;
+        margin-bottom: 1rem;
+    }
+
+    .mp-icon {        
         display: inline-block; 
-        width: 50px; 
-        height: 50px; 
+        max-width: 50px;          
         background-image: url('/media/mp-icon.ico'); 
         background-size: cover; 
         background-repeat: no-repeat; 
@@ -1221,18 +1224,19 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         vertical-align: middle; 
       }
     .container .pt-3{
-
         display: flex;
-        width:100%;
+        width:30%;
+        height:30%;
         align-items:center;
-        max-width: 100%;
+        
         padding-top:0.5em;
         flex-direction: column;
         margin: 0 auto;
     }
     .related-product{
-        width:35%;
-        max-width: 35%;
+        display: inline;
+        width:30%;
+        max-width: 30%;
         justify-self: center;
     }
     .related-product .carousel-inner{
@@ -1242,13 +1246,13 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     .related-product .carousel-item{
         padding:15px;        
         }
-
+        
     .related-product .card{
         width:100%;
         max-width: 100%;
         justify-self: center;
     }
-    .related-product .card .h-100{
+    .related-product .h-100{
         justify-self: center;
     }
     .related-product-img{
@@ -1269,6 +1273,48 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         border: none !important;
         z-index: 100;
         cursor:pointer;
+    }
+    .container .pt-3{
+
+        display: flex;
+        width:100%;
+        align-items:center;
+        max-width: 100%;
+        padding-top:0.5em;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .related-product{
+        width:100%;
+        max-width: 100%;
+        justify-self: center;
+    }
+    .related-product .carousel-inner{
+        display:flex;
+        
+    }
+    .related-product .carousel-item{
+        padding:15px;        
+        }
+
+    .related-product .card{
+        width:100%;
+        max-width: 100%;
+        justify-self: center;
+    }
+    .related-product .h-100{
+        justify-self: center;
+    }
+    .related-product-img{
+        width: 100%;
+        height:auto;
+        object-fit: cover;
+
+    }
+    .related-product h4{
+        text-align: center;
+        margin-bottom: 20px;
+
     }
     .button-container{
         gap:10px;
@@ -1311,8 +1357,8 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         margin-left:2px;
         }
         
-        .my-float {
-            margin-top: 16px;
+    .my-float {
+           margin-top: 16px;
         }
     .icon-padding{
         padding-right: 5px ;
