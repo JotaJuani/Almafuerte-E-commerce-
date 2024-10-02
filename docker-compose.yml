@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: myshop_db
+      POSTGRES_USER: myshop_user
+      POSTGRES_PASSWORD: myshop_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - myshop_net
+
+  app:
+    build: 
+      context: . 
+    ports:
+     - "8000:8000"
+    volumes:
+      - ./myshop:/myshop
+      - ./scripts:/scripts  
+    environment:
+      - DEBUG=1
+    depends_on:
+      - db
+    command: /scripts/entrypoint.sh
+  
+networks:
+  myshop_net:
+
+volumes:
+  postgres_data:
