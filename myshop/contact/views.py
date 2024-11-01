@@ -46,7 +46,7 @@ def info_plantillas(request):
             email = form.cleaned_data['email']
             email_message = EmailMessage(
                 subject='Contacto Form de InfoPlantillas',
-                body='Recibiste un nuevo mensaje',
+                body='Quiero informacion sobre plantillas ortopedicas!',
                 from_email=settings.EMAIL_HOST_USER,
                 to=[settings.EMAIL_HOST_USER],
                 reply_to=[email],)

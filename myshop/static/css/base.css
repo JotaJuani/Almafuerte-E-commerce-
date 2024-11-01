@@ -869,17 +869,28 @@ form div.field {
 
 .contact-div {
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     padding: 20px;
     margin: auto;
     margin-top: 75px;
 }
-
+.contact-div h1 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+ }
+ .contact-div p{
+    max-width: 900px;
+    margin-bottom: 45px;
+ }
+ .contact-div img{
+    justify-items: center;
+ }
 .plantillas-1{
     width:50%;
     height:50%;
     
 }
+
 .input-group {
     width: auto;
     display: flex;
