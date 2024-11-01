@@ -30,7 +30,7 @@ def order_create(request):
                                          product=item['product'],
                                          price=str(item['price']),
                                          quantity=item['quantity'],
-                                         size=str['size'])
+                                         size = request.POST.get('size', ''))
 
             request.session['order_id'] = int(order.id)
             cart_serialized = {
