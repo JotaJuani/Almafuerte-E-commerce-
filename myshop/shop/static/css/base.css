@@ -68,6 +68,12 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-container {
     position: relative;
 }
+.carousel-slide{
+    justify-content: center;
+}
+.carousel-slide p{
+    justify-items: center;
+}
 .cart li {
     vertical-align: middle;
     align-items: center;
@@ -1150,8 +1156,6 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
   }
   .mp-icon {
     display: inline-block; 
-    width: 24px; 
-    height: 24px; 
     background-image: url('/media/mp-icon.ico'); 
     background-size: cover; 
     background-repeat: no-repeat; 
@@ -1214,15 +1218,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         margin-bottom: 1rem;
     }
 
-    .mp-icon {        
-        display: inline-block; 
-        max-width: 50px;          
-        background-image: url('/media/mp-icon.ico'); 
-        background-size: cover; 
-        background-repeat: no-repeat; 
-        background-position: center; 
-        vertical-align: middle; 
-      }
+
     .container .pt-3{
         display: flex;
         width:30%;
@@ -1342,8 +1338,8 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     }
     .whats-app {
         position: fixed;
-        width: 40px;
-        height: 46px;
+        width: 37px;
+        height: 37px;
         bottom: 40px;
         left:0;
         right:unset;
@@ -1373,10 +1369,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         
     }
     .mp-icon {
-        
         display: inline-block; 
-        width: 48px; 
-        height: 48px; 
         background-image: url('/media/mp-icon.ico'); 
         background-size: cover; 
         background-repeat: no-repeat; 

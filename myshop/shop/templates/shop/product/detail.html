@@ -61,14 +61,14 @@
         <p>Tarjetas</p>
         <i class="fa-solid fa-comments-dollar"></i>
         <p>Transferencia</p>
-        <i class="mp-icon"></i>
+        <i ><img src="{% static 'media/mp-icon.ico' %}" class="mp-icon"></i>
         <p>MP</p> 
       </div>
       <hr>
       <div class="related-product">
-        <h4>Productos relacionados</h4>
+        <h4>Otros productos que podrian interesarte</h4>
         <section class="container pt-3">
-          <section class="carousel slide" data-bs-ride="carousel" id="postsCarousel">
+          <section class="carousel-slide" data-bs-ride="carousel" id="postsCarousel">
             <div class="carousel-inner">
               {% if related_products %}
                 {% for related_product in related_products %}
