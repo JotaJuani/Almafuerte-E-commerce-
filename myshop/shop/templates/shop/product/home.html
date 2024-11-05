@@ -106,8 +106,7 @@
     </div> 
       <div class="projects-4">
           <div class="container-fluid">
-              <div class="row">
-                  
+              <div class="row">                  
                   <div class="col-md-6 px-0">
                       <div class="card card-fashion card-background" style="background-image: url('{% static "media/picture_4.jpg" %}');">
                         
@@ -200,5 +199,68 @@
           </div>        
         </div>       
       </div>
+      <div class="projects-4">
+          <div class="container-fluid">
+              <div class="row">
+                  
+                  <div class="col-md-6 px-0">
+                      <div class="card card-fashion card-background" style="background-image: url('{% static "media/paddle-tennis.jpg" %}');">
+                        
+                          <div class="card-body">
+                              <div class="card-title">
+                                  <h2>
+                                      <a class="card-letters2" href= "{% url 'shop:product_list_by_category' 'tenis' %}">
+                                          Equipamiento de alto rendimiento para cada golpe.
+                                      </a>
+                                  </h2>
+                              </div>
+                              <div class="card-footer text-left">
+                                  
+                                  <div class="stats">
+                                      <span>
+                                          <i class="now-ui-icons users_circle-08"></i> 
+                                      <span>
+                                          <i class="now-ui-icons tech_watch-time"></i> 
+                                      </span>
+                                  </div>
+                                  <div class="stats-link pull-right">
+                                      <a href="#pablo" class="footer-link"></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                                  
+                  <div class="col-md-6 px-0">
+                      <div class="card-container">
+                          
+                          <div class="card card-fashion">
+                              
+                              <div class="card-title">
+                                  <h4>
+                                      <a class="card-letters1" href="{% url 'shop:product_list_by_category' 'swimming' %}">
+                                      Natación, convierte cada brazada en un nuevo logro.</a>
+                                  </h4>
+                              </div>
+                              <div class="card-body">
+                                  <div class="card-footer text-left">
+                                      <div class="stats">
+                                          <span>
+                                              <i class="now-ui-icons users_circle-08"></i> 
+                                          </span>
+                                          <span>
+                                              <i class="now-ui-icons tech_watch-time"></i> 
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card card-fashion card-background" style="background-image: url('{% static "media/swimmer.jpg" %}');">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
   </div>
+    </div>
 {% endblock %}

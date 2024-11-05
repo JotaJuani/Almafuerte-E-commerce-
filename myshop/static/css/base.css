@@ -271,6 +271,11 @@ a.button, input[type="submit"] {
 .card-letters1{
     color:#567779;
 }
+.card-letters2 {
+    color:#ffffff;
+    margin-bottom: 10px;
+    margin-right: 3px;
+}
 a.button.light {
     color: #666;
     background: #ededed;
