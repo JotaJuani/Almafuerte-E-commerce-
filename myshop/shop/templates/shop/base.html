@@ -75,12 +75,26 @@
                     >Bienestar y salud</a
                   >
                 </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% url 'shop:product_list_by_category' 'fajas' %}"
+                    >Fajas</a
+                  >
+                </li>
+                <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'shop:product_list_by_category' 'medias-de-compresion' %}"
+                  >Medias de compresión</a
+                >
+              </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="{% url 'shop:product_list_by_category' 'bastones' %}"
-                    >Bastones</a
+                    href="{% url 'shop:product_list_by_category' 'info_plantillas' %}"
+                    >Plantillas personalizadas</a
                   >
                 </li>
               </ul>
@@ -105,21 +119,33 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    href="{% url 'shop:product_list_by_category' 'fitness' %}"
+                    href="{% url 'shop:product_list_by_category' 'gym-y-training' %}"
                     >GYM</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% url 'shop:product_list_by_category' 'futbol-y-deportes' %}"
+                    >Fútbol</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="{% url 'shop:product_list_by_category' 'futbol-y-deportes' %}"
-                    >Futbol y deportes</a
+                    href="{% url 'shop:product_list_by_category' 'tenis' %}"
+                    >Tenis</a
                   >
                 </li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Accesorios</a>
+                  <a
+                    class="dropdown-item"
+                    href="{% url 'shop:product_list_by_category' 'swimming' %}"
+                    >Natación</a
+                  >
                 </li>
+                
               </ul>
             </li>
             <li class="nav-item">
@@ -216,7 +242,6 @@
           aria-label="Close"
         ></button>
       </div>
-
       <div class="offcanvas-body">
         <ul class="navbar-nav flex-column">
           <li class="nav-item">
@@ -228,7 +253,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             ><i class="fa-solid fa-kit-medical icon-padding"></i>
-              Rehabilitación <i class="bi bi-caret-down-fill"></i>
+              Ortopedia <i class="bi bi-caret-down-fill"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li>
@@ -244,12 +269,26 @@
                   >Bienestar y Salud </a
                 >
               </li>
-              <li><hr class="dropdown-divider" /></li>
               <li>
                 <a
                   class="dropdown-item"
                   href="{% url 'shop:product_list_by_category' 'bastones' %}"
                   >Bastones</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'shop:product_list_by_category' 'fajas' %}"
+                  >Fajas</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'shop:product_list_by_category' 'medias-de-compresion' %}"
+                  >Medias de compresión</a
                 >
               </li>
             </ul>
@@ -270,7 +309,7 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="{% url 'shop:product_list_by_category' 'fitness' %}"
+                  href="{% url 'shop:product_list_by_category' 'gym-y-training' %}"
                   >GYM</a
                 >
               </li>
@@ -278,12 +317,22 @@
                 <a
                   class="dropdown-item"
                   href="{% url 'shop:product_list_by_category' 'futbol-y-deportes' %}"
-                  >Futbol y deportes</a>
+                  >Fútbol y deportes</a>
               </li>
-              <li><hr class="dropdown-divider" /></li>
               <li>
-                <a class="dropdown-item" href="#">Accesorios</a>
-              </li>
+                  <a
+                    class="dropdown-item"
+                    href="{% url 'shop:product_list_by_category' 'tenis' %}"
+                    >Tenis</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% url 'shop:product_list_by_category' 'swimming' %}"
+                    >Natación</a
+                  >
+                </li>
             </ul>
           </li>
           <li class="nav-item">

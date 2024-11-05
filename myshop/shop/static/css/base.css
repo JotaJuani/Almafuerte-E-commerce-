@@ -916,13 +916,14 @@ color: #b38693;
     color:#b38693;
 }
 .offcanvas {
-    background: linear-gradient(to top,white ,#b38693);
-    border-radius: 15px;
+    background: linear-gradient(to top,white ,lightpink)!important;
+    border-radius: 5px;
     
 }
 .offcanvas-header{
     background-color: white;
-  }
+
+}
 
   .user-links {
     color: #b38693;
@@ -1749,11 +1750,13 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         color:#b38693;
     }
     .offcanvas {
-        background: linear-gradient(to top,white ,#b38693);
-        border-radius: 9px;
-    }    
+        background: linear-gradient(to top,white ,lightpink);
+        border-radius: 5px;
+        
+    }
     .offcanvas-header{
         background-color: white;
+
     }
     .navbar-brand img{
         height: 44px;
