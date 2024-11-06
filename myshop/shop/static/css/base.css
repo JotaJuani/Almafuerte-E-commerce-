@@ -1750,7 +1750,7 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         color:#b38693;
     }
     .offcanvas {
-        background: linear-gradient(to top,white ,lightpink);
+        background: linear-gradient(to top,white ,lightpink)!important;
         border-radius: 5px;
         
     }
