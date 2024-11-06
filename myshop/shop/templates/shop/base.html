@@ -170,22 +170,24 @@
                 <li class="nav-item">
                   <span class="navbar-text">{{ request.user }}</span>
                 </li>
-                {% endif %}
-                <li>
-                  <a class="dropdown-item" href="{% url 'account:login' %}"
-                    >Iniciar sesión</a
-                  >
-                </li>
                 <li>
                   <a class="dropdown-item" href="{% url 'account:logout' %}"
                     >Cerrar sesión</a
                   >
                 </li>
+                {% else %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'account:login' %}"
+                    >Iniciar sesión</a
+                  >
+                </li>
+                
                 <li>
                   <a class="dropdown-item" href="{% url 'account:register' %}"
                     >Registrarse</a
                   >
                 </li>
+                {% endif %}
               </ul>
             </li>
           </ul>
