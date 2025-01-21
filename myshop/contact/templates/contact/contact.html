@@ -7,6 +7,13 @@
   <body>
     <div class="contact-div">
       <h1>Contacto</h1>
+      {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="alert {{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+      {% endif %}
       <form method="post" action="">
         {% csrf_token %} {{ form.as_p }}
         <button class="contact-button" type="submit">Enviar</button>

@@ -5,7 +5,38 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
-
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+img.logo_foot {
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%); /* Centra el logo horizontalmente */
+    width: 15px; /* Ajusta el tamaño según tus necesidades */
+    height: 15px; /* Mantiene la proporción del logo */
+  }
+.offcanvas-header .logo {
+    max-width: 10px;
+    height: 10px;
+  }
 .menu-toggle{
     background-color: transparent;
     border: none;
@@ -734,7 +765,7 @@ form div.field {
     background-position: center; 
     background-size: cover; 
     
-    display: block;
+    display: flex;
     unicode-bidi: isolate;
     margin-top: 40px;
     margin-bottom: 15px;

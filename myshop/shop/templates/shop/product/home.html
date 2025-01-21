@@ -1,8 +1,8 @@
 {% extends "shop/base.html" %}
 {% load static %}
-{% block title %}
-  {% if category %}{{ category.name }}{% else %}Almafuerte{% endif %}
-{% endblock %}
+
+{% if category %}{{ category.name }}{% else %}Almafuerte{% endif %}
+  
 {% block carousel %}
   
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -31,9 +31,7 @@
         <img src="{% static 'media/picture_3.jpg' %}" class="d-block w-100" alt="Third slide">
         <div class="carousel-caption  d-md-block">
           <h1 class="slide-title-dif"> <img src="{% static 'media/Flamenco_logo.png' %}" alt="Logo" class="icon-logo">lmafuerte</h1>
-          <h5 class="slide-sub">ORTOPEDIAS.</h5>
-          
-          
+          <h5 class="slide-sub">ORTOPEDIAS.</h5>          
         </div>
       </div>
     </div>
@@ -224,7 +222,7 @@
                                       </span>
                                   </div>
                                   <div class="stats-link pull-right">
-                                      <a href="#pablo" class="footer-link"></a>
+                                      <a href="" class="footer-link"></a>
                                   </div>
                               </div>
                           </div>

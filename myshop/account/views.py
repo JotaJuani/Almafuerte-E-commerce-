@@ -25,7 +25,7 @@ def loginUser(request):
             return redirect('shop:product_list')
         else:
             print('Authentication failed')
-            messages.error(request, 'Username or password is incorrect')
+            messages.error(request, 'Usuario o contraseña incorrecta')
 
     return render(request, 'account/login_register.html', {'page': page})
 
@@ -47,7 +47,7 @@ def register_User(request):
                 return redirect('shop:product_list')
             else:
                 messages.error(
-                    request, 'Registration failed. Please try again.')
+                    request, 'El registro  falló. Por favor intentelo nuevamente.')
         else:
             for field, errors in form.errors.items():
                 for error in errors:
