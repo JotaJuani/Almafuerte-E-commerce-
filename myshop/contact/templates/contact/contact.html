@@ -14,10 +14,22 @@
                 {% endfor %}
             </ul>
       {% endif %}
-      <form method="post" action="">
-        {% csrf_token %} {{ form.as_p }}
-        <button class="contact-button" type="submit">Enviar</button>
-      </form>
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_name">Nombre</label>
+        {{ form.name }}
+      </div>
+      <div class="form-group">
+        <label for="id_email">Mail</label>
+        {{ form.email }}
+      </div>
+      <div class="form-group">
+        <label for="id_content">Mensaje</label>
+        {{ form.content }}
+      </div>
+      <button class="contact-button" type="submit">Enviar</button>
+    </form>
+    <img src="{% static 'media/almafuerte_logo_png.png' %}" class="logo_contact" alt="logo_contact" />
     </div>
   </body>
 </html>
