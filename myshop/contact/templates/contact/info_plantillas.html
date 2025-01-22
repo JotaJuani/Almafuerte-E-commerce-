@@ -21,9 +21,12 @@ ortopedicas{%endblock %} {% block content %}
                 {% endfor %}
             </ul>
           {% endif %}
+          <div class="logo-container">
+          <img src="{% static 'media/almafuerte_logo_png.png' %}" class="logo_contact" alt="logo_contact" />
+          </div>
       <h1><strong>Plantillas ortopédicas a medida</strong></h1>
       <h5>Confort y salud para tus pies, diseñadas especialmente para vos</h5>
-
+        
       <div data-aos="fade-left" class="content-block">
         <figure class="image-with-caption">
           <img
@@ -76,23 +79,25 @@ ortopedicas{%endblock %} {% block content %}
         </p>
       </div>
 
-      <div class="contact-mail">
-        <h2><strong>¿Quieres saber más?</strong></h2>
-        <p>
-          ¡Estamos para ayudarte! Dejanos tu <strong>mail</strong> y nos
-          pondremos en contacto para resolver tus dudas y agendar un turno.
-        </p>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="fa-regular fa-envelope"></i>
-            </span>
+      <div class="contact-mail container py-5">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold">¿Quieres saber más?</h2>
+          <p class="lead">
+            ¡Estamos para ayudarte! Déjanos tu <strong>mail</strong> y nos pondremos en contacto para resolver tus dudas y agendar un turno.
+          </p>
+        </div>
+        <div class="row justify-content-center" style="width: inherit;">
+          <div class="col-12 col-md-8 col-lg-6">
+            <form method="post" action="" class="d-flex">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-light">
+                  <i class="fa-regular fa-envelope"></i>
+                </span>
+              </div>
+              <input type="email" class="form-control flex-grow-1" placeholder="Ingresa tu email" aria-label="Email" name="email">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </form>
           </div>
-          <form method="post" action="">
-            {% csrf_token %} {{ form.email }}
-            <button class="contact-button" type="submit">Enviar</button>
-          </form>
-          
         </div>
       </div>
     </div>

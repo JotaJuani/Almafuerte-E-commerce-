@@ -5,12 +5,17 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
-.logo_contact{
-    align-items: center;
-    height:85px;
-    width:85px;
+.logo-container {
+    text-align: center; 
+    margin-top: auto; 
+  }
+  
+  .logo_contact {
+    max-width: 100px; 
+    height: auto;
   }
 .contact-div {
+    position:relative;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
