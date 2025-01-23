@@ -5,6 +5,91 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
+.reset-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  
+  .reset-password-form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  
+  .reset-password-form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reset-password-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+.reset-password-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .reset-password-container h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  
+  .reset-password-form {
+    margin-top: 20px;
+  }
+  
+  .reset-password-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reset-password-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .reset-password-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .reset-password-container {
+      padding: 15px;
+    }
+  
+    .reset-password-form button {
+      font-size: 14px;
+    }
+  }
 .logo-container {
     text-align: center; 
     margin-top: auto; 
@@ -911,7 +996,6 @@ form div.field {
     padding: 20px 0;
   }
   .container{
-    
     position: sticky;
     top:0;
     z-index:2; 
