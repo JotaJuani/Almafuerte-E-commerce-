@@ -18,7 +18,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'almafuerteortopedia.com.ar',
+                 'www.almafuerteortopedia.com.ar']
 ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
@@ -93,7 +94,7 @@ DATABASES = {
         'USER': 'myshop_user',
         'PASSWORD': 'myshop_password',
         'HOST': 'db',
-        'PORT': '5432', 
+        'PORT': '5432',
     }
 }
 
@@ -153,4 +154,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-MERCADO_PAGO_ACCESS_TOKEN = 'TEST-940150802663635-082020-42dc1d988cab6bfac5326f8f292f8d9a-328079380'
+MERCADO_PAGO_ACCESS_TOKEN = config('MERCADO_PAGO_ACCESS_TOKEN')
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SLL_REDIRECT = True
+
+SECURE_HSTS_SECONDS= 31536000
+SECURE_HSTS_PRELOAD= True
+SECURE_HSTS_INCLUDE_SUBDOMAINS= True
+
