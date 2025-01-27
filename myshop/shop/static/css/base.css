@@ -1245,6 +1245,8 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
     color:#9e6676;
   }
   .mp-icon {
+    height: 50px;
+    width:50px;
     display: inline-block; 
     background-image: url('/media/mp-icon.ico'); 
     background-size: cover; 
@@ -1459,6 +1461,8 @@ table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .
         
     }
     .mp-icon {
+        height: 40px;
+        width: 40px;
         display: inline-block; 
         background-image: url('/media/mp-icon.ico'); 
         background-size: cover; 

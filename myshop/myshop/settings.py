@@ -4,19 +4,27 @@ from pathlib import Path
 from decouple import config
 from django.contrib.messages import constants as messages
 import os
+import dj_database_url
+from environ import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = Env()
+Env.read_env(env_file=str(BASE_DIR) + '/.env')
+ENVIRONMENT = env('ENVIROMENT', default='production')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.environ.get('DEBUG', 0)))
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'almafuerteortopedia.com.ar',
                  'www.almafuerteortopedia.com.ar']
@@ -41,10 +49,12 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'contact.apps.ContactConfig',
     'rest_framework',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -88,16 +98,14 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myshop_db',
-        'USER': 'myshop_user',
-        'PASSWORD': 'myshop_password',
-        'HOST': 'db',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default = env('DATABASE_URL'), 
+        conn_max_age = 1800,)
 }
 
+POSTGRES_LOCALLY = True
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -156,11 +164,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MERCADO_PAGO_ACCESS_TOKEN = config('MERCADO_PAGO_ACCESS_TOKEN')
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SLL_REDIRECT = True
-
-SECURE_HSTS_SECONDS= 31536000
-SECURE_HSTS_PRELOAD= True
-SECURE_HSTS_INCLUDE_SUBDOMAINS= True
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
