@@ -1,4 +1,4 @@
-version: '3.8'
+
 services:
   db:
     image: postgres:13
@@ -18,13 +18,22 @@ services:
     ports:
       - "8080:8080"
     volumes:
+      - ./myshop:/myshop
       - ./static:/vol/web/static  
       - ./media:/vol/web/media
     environment:
       - DEBUG=1
+      - DB_NAME=myshop_db
+      - DB_USER=myshop_user
+      - DB_PASSWORD=myshop_password
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DATABASE_URL=postgres://myshop_user:myshop_password@db:5432/myshop_db
+      - CELERY_BROKER=REDIS://REDIS:6379/0/
+      - DEBUG=1
     depends_on:
       - db
-    command: /scripts/entrypoint.sh
+    command: sh -c "python manage.py runserver 0.0.0.0:8080"
     networks:
       - myshop_net
 
@@ -38,6 +47,7 @@ services:
       - app
     networks:
       - myshop_net
+
 
 networks:
   myshop_net:
