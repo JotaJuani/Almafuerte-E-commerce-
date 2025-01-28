@@ -26,8 +26,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = [ 'almafuerteortopedia.com.ar',
-                 ]
+ALLOWED_HOSTS = [ 'almafuerteortopedia.com.ar', 'www.almafuerteortopedia.com.ar']
 ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
@@ -165,3 +164,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 MERCADO_PAGO_ACCESS_TOKEN = config('MERCADO_PAGO_ACCESS_TOKEN')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+SECURE_SSL_REDIRECT = True
