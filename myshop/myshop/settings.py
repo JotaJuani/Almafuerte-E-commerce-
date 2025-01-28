@@ -26,8 +26,8 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'almafuerteortopedia.com.ar',
-                 'www.almafuerteortopedia.com.ar']
+ALLOWED_HOSTS = [ 'almafuerteortopedia.com.ar',
+                 ]
 ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
