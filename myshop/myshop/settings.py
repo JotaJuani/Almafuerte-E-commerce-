@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'contact.apps.ContactConfig',
     'rest_framework',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
+    'myshop'
 ]
 
 MIDDLEWARE = [
@@ -163,5 +164,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MERCADO_PAGO_ACCESS_TOKEN = config('MERCADO_PAGO_ACCESS_TOKEN')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 SECURE_SSL_REDIRECT = True
