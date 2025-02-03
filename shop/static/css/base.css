@@ -5,6 +5,18 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+.logo_contact {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; 
+}
 .contact-div {
     max-width: 600px;
     margin: 0 auto;
