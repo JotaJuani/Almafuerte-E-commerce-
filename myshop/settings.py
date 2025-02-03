@@ -170,3 +170,4 @@ SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 ROOT_URLCONF = "myshop.urls"
+CSRF_TRUSTED_ORIGINS = ["https://almafuerteortopedia.com.ar"]
