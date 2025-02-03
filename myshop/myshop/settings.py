@@ -72,7 +72,7 @@ MESSAGE_TAGS = {
 }
 
 
-ROOT_URLCONF = 'myshop.urls'
+
 
 TEMPLATES = [
     {
@@ -169,3 +169,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
+ROOT_URLCONF = "myshop.myshop.urls"
