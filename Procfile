@@ -1,2 +1,2 @@
-web: python manage.py collectstatic && gunicorn myshop.wsgi
+web: python manage.py collectstatic --noinput && gunicorn myshop.wsgi
 
