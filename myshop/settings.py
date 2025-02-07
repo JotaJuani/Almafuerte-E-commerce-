@@ -147,7 +147,7 @@ STATIC_ROOT = '/vol/web/static'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = '/media/'
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
 # MEDIA_URL = 'media/'
 # MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_ROOT = '/vol/web/media'
