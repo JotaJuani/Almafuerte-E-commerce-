@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'rest_framework',
     'whitenoise.runserver_nostatic',
-    'myshop'
+    'myshop',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -70,8 +71,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
     messages.ERROR: 'danger',
 }
-
-
 
 
 TEMPLATES = [
@@ -171,3 +170,14 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 ROOT_URLCONF = "myshop.urls"
 CSRF_TRUSTED_ORIGINS = ["https://almafuerteortopedia.com.ar"]
+
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = "sa-east-1"  
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+AWS_S3_SIGNATURE_NAME = 's3v4'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_VERITY= True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
