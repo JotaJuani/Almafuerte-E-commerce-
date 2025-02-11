@@ -24,7 +24,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "almafuerteortopedia.com.ar,www.almafuerteortopedia.com.ar").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", 'almafuerteortopedia.com.ar', 'www.almafuerteortopedia.com.ar', '127.0.0.1', 'localhost').split(",")
 
 
 # Application definition
