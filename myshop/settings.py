@@ -148,7 +148,7 @@ MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
 MEDIA_ROOT = '/vol/web/media'
 CART_SESSION_ID = 'cart'
 
-
+ADMINS = [('Admin', os.getenv('ADMIN_EMAIL', 'admin@example.com'))]
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
