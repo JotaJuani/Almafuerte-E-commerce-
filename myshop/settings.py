@@ -24,7 +24,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "almafuerteortopedia.com.ar,www.almafuerteortopedia.com.ar").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
 
 # Application definition
@@ -137,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static",]
-STATIC_ROOT = '/vol/web/static'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 AWS_S3_CUSTOM_DOMAIN = "ortopediashopbucket.s3.amazonaws.com"
@@ -184,7 +184,7 @@ LOG_DIR = os.path.join(BASE_DIR, 'logs')
 # Crear el directorio si no existe
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
-    
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
