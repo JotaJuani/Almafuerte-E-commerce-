@@ -21,10 +21,10 @@ ENVIRONMENT = env('ENVIROMENT', default='production')
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-'''if ENVIRONMENT == 'development':
+if ENVIRONMENT == 'development':
     DEBUG = True
-else:'''
-DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = [ 'almafuerteortopedia.com.ar', 'www.almafuerteortopedia.com.ar']
 ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
