@@ -21,17 +21,10 @@ ENVIRONMENT = env('ENVIROMENT', default='production')
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-'''if ENVIRONMENT == 'development':
-    DEBUG = True
-else:
-    DEBUG = False'''
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = [ 'almafuerteortopedia.com.ar', 'www.almafuerteortopedia.com.ar']
-ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
-if ALLOWED_HOSTS_ENV:
-    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "almafuerteortopedia.com.ar,www.almafuerteortopedia.com.ar").split(",")
 
 
 # Application definition
@@ -171,7 +164,7 @@ SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 ROOT_URLCONF = "myshop.urls"
-CSRF_TRUSTED_ORIGINS = ["https://almafuerteortopedia.com.ar"]
+CSRF_TRUSTED_ORIGINS = ["https://almafuerteortopedia.com.ar",'https://www.almafuerteortopedia.com.ar']
 
 AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
