@@ -179,6 +179,12 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_CUSTOM_DOMAIN = "ortopediashopbucket.s3.amazonaws.com"
 
 
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+
+# Crear el directorio si no existe
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+    
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -186,7 +192,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': 'errors.log',
+            'filename': os.path.join(LOG_DIR,'errors.log'),
         },
     },
     'loggers': {
