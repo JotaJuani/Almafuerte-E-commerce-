@@ -145,7 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
 # MEDIA_URL = 'media/'
 # MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = '/vol/web/media'
+#MEDIA_ROOT = '/vol/web/media'
 CART_SESSION_ID = 'cart'
 
 ADMINS = [('Admin', os.getenv('ADMIN_EMAIL', 'admin@example.com'))]
