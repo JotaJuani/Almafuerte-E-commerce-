@@ -164,7 +164,7 @@ SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 ROOT_URLCONF = "myshop.urls"
-CSRF_TRUSTED_ORIGINS = ["https://almafuerteortopedia.com.ar",'https://www.almafuerteortopedia.com.ar']
+CSRF_TRUSTED_ORIGINS = ['https://almafuerteortopedia.com.ar','https://www.almafuerteortopedia.com.ar','https://almafuerteortopedia.com.ar/','https://www.almafuerteortopedia.com.ar/']
 
 AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
