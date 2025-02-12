@@ -160,9 +160,9 @@ MERCADO_PAGO_ACCESS_TOKEN = config('MERCADO_PAGO_ACCESS_TOKEN')
 
 #STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 ROOT_URLCONF = "myshop.urls"
 CSRF_TRUSTED_ORIGINS = ["https://almafuerteortopedia.com.ar",'https://www.almafuerteortopedia.com.ar']
 
