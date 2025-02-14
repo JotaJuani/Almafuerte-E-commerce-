@@ -2,9 +2,6 @@
 {% load static %}
 {% block title%}Contacto{%endblock %}
  {% block content %}
-<!DOCTYPE html>
-<html>
-  <body>
     <div class="contact-div">
       <h1>Contacto</h1>
       {% if messages %}
@@ -14,6 +11,7 @@
                 {% endfor %}
             </ul>
       {% endif %}
+    <form method="post" action="">
       {% csrf_token %}
       <div class="form-group">
         <label for="id_name">Nombre</label>
@@ -33,6 +31,4 @@
         <img src="{% static 'media/almafuerte_logo_png.png' %}" class="logo_contact" alt="logo_contact" />
       </div>
     </div>
-  </body>
-</html>
 {% endblock %}
